@@ -1,7 +1,7 @@
 select * from mock_data order by source,id;
 select count(*) from mock_data; --10000
 
-
+SELECT customer_first_name, customer_last_name, customer_email,COUNT(*) from mock_data group by  customer_first_name, customer_last_name, customer_email having COUNT(*) > 1;--0 юзеры уникальны 
 
 SELECT source,id, COUNT(*) FROM mock_data GROUP BY id,source HAVING COUNT(*) > 1 order by source,id; --all records are unique for it's PK (sourse(№ of table)+id)
 
